@@ -8,14 +8,14 @@ The system can help financial institutions identify and block suspicious transac
 <b>Evaluation Metrics:</b> We evaluated the performance of our models on the training, validation, and test datasets using various metrics. Here are the evaluation results:<br><br>
 <li>For Model Trained on df:<br>
 Test Set:<br>
-o	Accuracy: 0.9889<br>
-o	F1 Score: 0.9890<br>
-o	ROC AUC Score: 0.9889<br><br>
+o	Accuracy: 0.9987<br>
+o	F1 Score: 0.9987<br>
+o	ROC AUC Score: 0.9987<br><br>
 <li>For Model Trained on df2:<br>
 Test Set:<br>
-o	Accuracy: 0.9867<br>
-o	F1 Score: 0.9868<br>
-o	ROC AUC Score: 0.9867<br><br>
+o	Accuracy: 0.9977<br>
+o	F1 Score: 0.9977<br>
+o	ROC AUC Score: 0.9977<br><br>
 <b>Analysis:</b> Based on the evaluation metrics, it can be observed that the model trained on df (which includes all transaction types) outperformed the model trained on df2 (which only considers transfers and cash outs) in terms of accuracy and F1 score. This indicates that including other transaction types in the training data helped improve the model's performance.
 Furthermore, both models demonstrated high accuracy and F1 scores on both the validation and test sets, indicating their effectiveness in detecting fraudulent transactions. The ROC AUC scores also suggest that the models have good discriminatory power.<br><br>
   <b>Feature Importance:</b> By analyzing the feature importances using XGBoost, we identified the following insights:<br>
