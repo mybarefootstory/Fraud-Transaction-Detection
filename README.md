@@ -1,32 +1,74 @@
-# FraudTransactionsDetection
-<h2>Objective:</h2> Our idea aims to develop a fraud detection system for financial transactions that can accurately identify fraudulent activities and prevent potential losses. By leveraging machine learning algorithms and advanced data analytics techniques, we aim to create a robust and effective solution that enhances security and trust in financial transactions.
-<h2>Implementation:</h2>To implement our idea, we gathered a comprehensive dataset of financial transactions that included various features such as transaction type, amount, time, source, destination, and additional contextual information. We preprocessed and analyzed the data, performed feature engineering to extract relevant information, and trained a machine learning model on the labeled data to detect fraudulent transactions.
-We used a combination of supervised learning techniques, such as logistic regression, decision trees, or ensemble methods like XGBoost, to train the model. The model learned from historical data patterns and characteristics of fraudulent transactions to make predictions on new, unseen transactions. We evaluated the performance of the model using appropriate evaluation metrics, such as accuracy, precision, recall, and F1-score, and fine-tuned the model parameters to optimize its performance. The best accuracy was obtained by XGBoost.
-<h2>Applications:</h2>The developed fraud detection system has various applications in the financial industry, including banking, e-commerce, payment gateways, and insurance sectors. It can be integrated into existing transaction processing systems to provide real-time fraud detection capabilities, enabling timely intervention and prevention of fraudulent activities.
-The system can help financial institutions identify and block suspicious transactions, protect customers from fraudulent activities, and minimize financial losses. It can also assist in fraud investigations by providing insights into fraudulent patterns and identifying potential perpetrators.
-<h2>Final Result:</h2>
-<b>Evaluation Metrics:</b> We evaluated the performance of our models on the training, validation, and test datasets using various metrics. Here are the evaluation results:<br><br>
+# Fraudulent Transaction Identification System
+
+<h2>Goal:</h2> 
+The primary aim of this project is to build a system that can efficiently detect fraudulent transactions in financial activities. By applying machine learning models and sophisticated data analysis methods, we strive to create a strong solution that enhances the safety and reliability of financial operations.
+
+<h2>Execution:</h2>
+For the execution of this idea, we obtained a dataset of financial transactions that consists of various attributes such as transaction type, amount, time, origin, destination, and additional contextual details. The data underwent preprocessing, followed by feature engineering to extract key features, and a machine learning model was trained on this labeled data to detect fraudulent transactions.
+We employed a mix of supervised learning algorithms like logistic regression, decision trees, and ensemble methods such as XGBoost to train our models. The model learned patterns and trends from historical fraudulent activities, allowing it to predict new, unseen transactions. We tested the model's effectiveness using appropriate metrics, including accuracy, precision, recall, and F1-score, and performed parameter tuning to optimize its output. XGBoost provided the highest accuracy.
+
+<h2>Use Cases:</h2>
+The fraud detection system developed through this project has applications across the financial sector, including banks, online payment platforms, insurance, and e-commerce companies. It can be integrated with current transaction processing platforms to enable real-time identification of suspicious transactions and prevent fraud immediately.
+This system can help financial institutions detect and halt fraudulent transactions, safeguard customers from fraud, and reduce financial losses. Moreover, it aids in fraud investigations by identifying fraudulent behavior and tracking down offenders.
+
+<h2>Results:</h2>
+<b>Performance Evaluation:</b> 
+We assessed the performance of our models across training, validation, and testing datasets using multiple evaluation metrics. The results are as follows:<br><br>
+
 <li>For Model Trained on df:<br>
 Test Set:<br>
-o	Accuracy: 0.9987<br>
-o	F1 Score: 0.9987<br>
-o	ROC AUC Score: 0.9987<br><br>
+o Accuracy: 0.9987<br>
+o F1 Score: 0.9987<br>
+o ROC AUC Score: 0.9987<br><br>
+
 <li>For Model Trained on df2:<br>
 Test Set:<br>
-o	Accuracy: 0.9977<br>
-o	F1 Score: 0.9977<br>
-o	ROC AUC Score: 0.9977<br><br>
-<b>Analysis:</b> Based on the evaluation metrics, it can be observed that the model trained on df (which includes all transaction types) outperformed the model trained on df2 (which only considers transfers and cash outs) in terms of accuracy and F1 score. This indicates that including other transaction types in the training data helped improve the model's performance.
-Furthermore, both models demonstrated high accuracy and F1 scores on both the validation and test sets, indicating their effectiveness in detecting fraudulent transactions. The ROC AUC scores also suggest that the models have good discriminatory power.<br><br>
-  <b>Feature Importance:</b> By analyzing the feature importances using XGBoost, we identified the following insights:<br>
-<li>The most important feature for the model's prediction was diffOrg, followed by oldbalanceOrg, amount, and newbalanceDest.
-<li>Surprisingly, the feature isFlaggedFraud did not contribute significantly to the model's prediction, likely due to its low number of positive examples.
-<li>The feature diffDest had higher sample coverage and weight compared to CASH_IN, but its gain was lower, which was unexpected.
-<li>The weight of the feature step was relatively high, but its gain was comparatively lower, possibly due to the uniform distribution of fraud transactions across different steps.<br><br>
-  
-  <h2>Future Development:</h2>To further enhance the fraud detection system, we can consider the following steps:
-<li>	Collect more transaction data: Gathering additional data, especially on fraudulent transactions, can help improve the model's performance and robustness.
-<li>	Explore advanced techniques: Investigate advanced machine learning techniques such as anomaly detection algorithms or deep learning models to potentially uncover more complex fraud patterns and enhance the system's detection capabilities.
-<li>	Continuously update the model: Keep updating the model with new data to ensure it remains effective against evolving fraud techniques. Regular retraining and fine-tuning of the model can help maintain its accuracy and adaptability.
-<li>	Collaborate with industry experts: Collaborate with financial institutions, industry experts, and cybersecurity professionals to incorporate domain-specific knowledge, share insights, and stay updated on emerging fraud trends. This collaboration will help build a more comprehensive and powerful fraud detection solution.<br><br>
-Overall, our objective is to create a sustainable and continuously improving fraud detection system that contributes to a safer and more secure financial ecosystem.
+o Accuracy: 0.9977<br>
+o F1 Score: 0.9977<br>
+o ROC AUC Score: 0.9977<br><br>
+
+<b>Interpretation:</b> 
+From the results, it's clear that the model trained on df (which includes all transaction types) performed better than the model trained on df2 (which focuses on transfers and cash-outs only) in terms of accuracy and F1 score. This highlights that including additional transaction types enhanced the model’s accuracy.
+Both models, however, exhibited high levels of accuracy and F1 scores across both validation and test datasets, showcasing their proficiency in identifying fraudulent activities. The ROC AUC scores also indicate that the models are effective at distinguishing between fraudulent and legitimate transactions.<br><br>
+
+<b>Key Feature Insights:</b> 
+By studying the feature importance using XGBoost, we derived the following observations:<br>
+
+<li>The feature diffOrg emerged as the most critical in determining fraud, followed by oldbalanceOrg, transaction amount, and newbalanceDest.</li>
+<li>Interestingly, the isFlaggedFraud feature had a minimal contribution to model predictions, likely due to the low number of flagged instances.</li>
+<li>Although the feature diffDest had a broader sample coverage and higher weight compared to CASH_IN, its gain was unexpectedly lower.</li>
+<li>The step feature held a relatively higher weight, though its gain was lower, possibly due to the even distribution of fraudulent activities across the steps.</li><br><br>
+
+<h2>Future Enhancements:</h2>
+To further improve the fraud detection system, the following strategies could be explored:
+
+<li>Increase data collection: Acquiring more data, especially for fraudulent transactions, can help increase the robustness of the model.</li>
+<li>Advanced Techniques: Delve into more advanced methodologies such as anomaly detection or deep learning models to potentially uncover more intricate fraud patterns and boost detection rates.</li>
+<li>Continuous model updates: Regularly update the model with fresh data to ensure it stays effective against evolving fraud tactics. Periodic retraining and tuning can keep the model accurate and adaptable.</li>
+<li>Collaborating with industry professionals: Engaging with industry leaders, financial institutions, and cybersecurity experts can add valuable domain-specific knowledge to the solution, further strengthening the model.</li><br><br>
+
+The ultimate objective is to build a continuously evolving and adaptive fraud detection system that helps create a safer financial environment.
+
+<h2>Dataset Information:</h2>
+We utilized the following dataset for this project:
+
+```python
+df = pd.read_csv('/content/data/Fraud.csv')
+# shape the data
+df.shape
+(6362620, 11)
+```
+The dataset consists of the following key columns:
+
+step: Represents the time step in hours, ranging from 1 to 744 (30 days simulation).
+type: The type of transaction, which includes CASH-IN, CASH-OUT, DEBIT, PAYMENT, and TRANSFER.
+amount: The transaction amount in the local currency.
+nameOrig: The identifier for the account initiating the transaction.
+oldbalanceOrg: The balance of the originating account before the transaction.
+newbalanceOrig: The balance of the originating account after the transaction.
+nameDest: The identifier for the receiving account.
+oldbalanceDest: The balance of the destination account before the transaction.
+newbalanceDest: The balance of the destination account after the transaction.
+isFraud: A binary indicator showing whether the transaction was fraudulent (1) or legitimate (0).
+isFlaggedFraud: A binary flag for transactions that attempted to transfer over 200,000 in a single transaction.
+<h3>Acknowledgments:</h3> This work was greatly influenced by the repository [FraudTransactionsDetection by Prerna Mittal](https://github.com/prernamittal/FraudTransactionsDetection). We appreciate their contribution, which served as a foundation for our project. ```
